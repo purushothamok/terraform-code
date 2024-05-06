@@ -9,3 +9,14 @@ variable "region" {
   type        = string
   description = "choose region"
 }
+
+variable "ingress_rules" {
+  type = map(object({
+    port  = string
+    cidrs = list(string)
+  }))
+}
+
+variable "ami" {
+  default = "ami-07caf09b362be10b8"
+}
